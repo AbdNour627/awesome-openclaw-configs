@@ -1,0 +1,63 @@
+// ============================================================
+// 📱 多渠道配置：微信 + WhatsApp + Telegram
+// ============================================================
+// 同时连接三个聊天平台，统一由一个 OpenClaw 实例管理。
+// 所有渠道共享同一个 AI 助手、同一套工具和 workspace。
+//
+// 渠道说明：
+//   - WhatsApp：内置支持，通过 Baileys Web 连接
+//   - Telegram：内置支持，通过 Bot API (grammY)
+//   - 微信/飞书/钉钉：需要安装社区插件或使用 wacli
+//
+// 配置 WhatsApp：openclaw channels login --channel whatsapp
+// 配置 Telegram：在 @BotFather 创建 bot 获取 token
+// ============================================================
+{
+  // 身份配置
+  identity: {
+    name: "小助手",
+    theme: "全能私人助理",
+    emoji: "🤖",
+  },
+
+  agents: {
+    defaults: {
+      workspace: "~/.openclaw/workspace",
+      model: { primary: "moonshot/kimi-k2.5" },
+    },
+  },
+
+  channels: {
+    // ===== WhatsApp 配置 =====
+    whatsapp: {
+      // 配对模式：新用户需要配对码才能使用
+      dmPolicy: "pairing",
+      // 允许的号码列表（配对成功后生效）
+      allowFrom: ["+86你的手机号"],
+      // 群聊：需要 @提及 才回复
+      groups: { "*": { requireMention: true } },
+      groupPolicy: "allowlist",
+      groupAllowFrom: ["+86你的手机号"],
+      // 消息分块大小
+      textChunkLimit: 4000,
+    },
+
+    // ===== Telegram 配置 =====
+    telegram: {
+      enabled: true,
+      // 在 @BotFather 获取的 token
+      botToken: "你的Telegram_Bot_Token",
+      dmPolicy: "pairing",
+      // 群聊：需要 @提及
+      groups: { "*": { requireMention: true } },
+    },
+  },
+
+  // 消息队列：收集模式，避免快速连续消息导致多次回复
+  routing: {
+    queue: {
+      mode: "collect",
+      debounceMs: 1000,
+    },
+  },
+}

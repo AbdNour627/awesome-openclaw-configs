@@ -1,0 +1,31 @@
+// ============================================================
+// 通义千问 Qwen 配置（免费 OAuth 方案）
+// ============================================================
+// Qwen 提供免费的 OAuth 接入（每天 2,000 次请求），
+// 无需 API Key，适合个人用户和轻量使用场景。
+//
+// 前置条件：
+//   1. 启用 Qwen 插件：openclaw plugins enable qwen-portal-auth
+//   2. 重启 Gateway：openclaw gateway restart
+//   3. 登录认证：openclaw models auth login --provider qwen-portal --set-default
+//   4. 按提示完成 OAuth 设备码验证
+//
+// 模型列表：
+//   - qwen-portal/coder-model （编程模型）
+//   - qwen-portal/vision-model（视觉模型）
+//
+// 如果你已经用 Qwen Code CLI 登录过，
+// OpenClaw 会自动同步 ~/.qwen/oauth_creds.json 的凭据。
+// ============================================================
+{
+  agents: {
+    defaults: {
+      // 主模型：Qwen 编程模型
+      model: { primary: "qwen-portal/coder-model" },
+      models: {
+        "qwen-portal/coder-model": { alias: "Qwen编程" },
+        "qwen-portal/vision-model": { alias: "Qwen视觉" },
+      },
+    },
+  },
+}

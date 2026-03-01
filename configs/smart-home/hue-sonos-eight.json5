@@ -1,0 +1,47 @@
+// ============================================================
+// 🏠 智能家居配置：Hue + Sonos + Eight Sleep
+// ============================================================
+// 通过 OpenClaw 语音/文字控制智能家居设备。
+// 需要安装对应的 AgentSkills。
+//
+// 所需技能（Skills）：
+//   clawhub install openhue     # Philips Hue 灯光控制
+//   clawhub install sonoscli    # Sonos 音箱控制
+//   clawhub install eightctl    # Eight Sleep 智能床垫
+//
+// 使用示例：
+//   "把客厅灯调暖一点"
+//   "播放周杰伦的歌"
+//   "睡前把床垫温度调到 25 度"
+// ============================================================
+{
+  identity: {
+    name: "家居管家",
+    theme: "贴心的智能家居助手",
+    emoji: "🏠",
+  },
+
+  agents: {
+    defaults: {
+      workspace: "~/.openclaw/workspace",
+      model: { primary: "moonshot/kimi-k2.5" },
+
+      // 心跳：定期检查设备状态
+      heartbeat: {
+        every: "1h",
+        target: "last",
+        activeHours: {
+          start: "07:00",
+          end: "23:00",
+        },
+      },
+    },
+  },
+
+  channels: {
+    whatsapp: {
+      dmPolicy: "allowlist",
+      allowFrom: ["+86你的手机号"],
+    },
+  },
+}

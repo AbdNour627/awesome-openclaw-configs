@@ -1,0 +1,16 @@
+// ============================================================
+// 🚀 最简配置：3 行搞定
+// ============================================================
+// OpenClaw 最小可用配置。
+// 只需要一个 workspace 和一个允许的手机号。
+//
+// 使用前：
+//   1. 安装 OpenClaw：npm i -g openclaw
+//   2. 运行向导：openclaw onboard
+//   3. 连接 WhatsApp：openclaw channels login --channel whatsapp
+//   4. 启动：openclaw gateway
+// ============================================================
+{
+  agents: { defaults: { workspace: "~/.openclaw/workspace" } },
+  channels: { whatsapp: { allowFrom: ["+86你的手机号"] } },
+}

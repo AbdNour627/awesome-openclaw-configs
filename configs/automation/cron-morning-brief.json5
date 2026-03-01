@@ -1,0 +1,48 @@
+// ============================================================
+// ⚡ 定时任务：每日早报
+// ============================================================
+// 每天早上 8:00 自动生成并推送一份简报，
+// 内容可以包括：天气、日历、待办、新闻等。
+//
+// Cron 是 Gateway 内置的调度器：
+//   - 任务持久化在 ~/.openclaw/cron/jobs.json
+//   - 重启不丢失
+//   - 支持一次性和循环任务
+//
+// 创建方法：
+//   openclaw cron add \
+//     --name "每日早报" \
+//     --cron "0 8 * * *" \
+//     --tz "Asia/Shanghai" \
+//     --session isolated \
+//     --message "生成今日简报：天气预报、今日日程、待办提醒。" \
+//     --announce \
+//     --channel whatsapp \
+//     --to "+86你的手机号"
+//
+// 管理命令：
+//   openclaw cron list          # 查看所有任务
+//   openclaw cron run <job-id>  # 手动触发
+//   openclaw cron runs --id <job-id>  # 查看执行记录
+// ============================================================
+
+// 注意：Cron 任务通过 CLI 命令创建，不是配置文件。
+// 以下配置确保 Gateway 支持 cron 功能（默认已启用）。
+{
+  agents: {
+    defaults: {
+      workspace: "~/.openclaw/workspace",
+      model: { primary: "moonshot/kimi-k2.5" },
+
+      // 心跳配合 cron 使用
+      heartbeat: {
+        every: "1h",
+        target: "last",
+        activeHours: {
+          start: "08:00",
+          end: "23:00",
+        },
+      },
+    },
+  },
+}

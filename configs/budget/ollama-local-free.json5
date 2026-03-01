@@ -1,0 +1,31 @@
+// ============================================================
+// 💰 零成本方案：Ollama 本地模型
+// ============================================================
+// 用自己的电脑跑大模型，完全免费，无网络依赖。
+// 适合有独显（8GB+ VRAM）的用户。
+//
+// 前置条件：
+//   1. 安装 Ollama：https://ollama.ai
+//   2. 拉取模型：
+//      ollama pull qwen2.5-coder:32b    # 编程推荐（需要较大显存）
+//      ollama pull llama3.3             # 通用推荐
+//      ollama pull deepseek-r1:32b      # 推理推荐
+//   3. 设置环境变量：export OLLAMA_API_KEY="ollama-local"
+//
+// 特性：
+//   - 模型自动发现（无需手动配置模型列表）
+//   - 支持工具调用的模型会自动标记
+//   - 所有成本为 0
+// ============================================================
+{
+  agents: {
+    defaults: {
+      model: { primary: "ollama/qwen2.5-coder:32b" },
+      models: {
+        "ollama/qwen2.5-coder:32b": { alias: "Qwen编程" },
+        "ollama/llama3.3": { alias: "Llama" },
+        "ollama/deepseek-r1:32b": { alias: "R1" },
+      },
+    },
+  },
+}

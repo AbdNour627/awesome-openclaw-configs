@@ -1,0 +1,29 @@
+// ============================================================
+// 百度千帆（Qianfan）配置
+// ============================================================
+// 千帆是百度的 MaaS 平台，提供统一 API 访问多种模型，
+// 兼容 OpenAI 接口。一个 Key 访问文心一言等全系列模型。
+//
+// 前置条件：
+//   1. 注册百度云账号，开通千帆 API
+//   2. 在千帆控制台创建应用并获取 API Key
+//      https://console.bce.baidu.com/qianfan/ais/console/apiKey
+//   3. API Key 格式：bce-v3/ALTAK-...
+//   4. 快速配置：openclaw onboard --auth-choice qianfan-api-key
+//
+// 文档：https://cloud.baidu.com/doc/qianfan-api/s/3m7of64lb
+// ============================================================
+{
+  env: {
+    QIANFAN_API_KEY: "bce-v3/ALTAK-你的密钥",
+  },
+
+  agents: {
+    defaults: {
+      model: { primary: "qianfan/ernie-4.5-turbo-vl-32k" },
+      models: {
+        "qianfan/ernie-4.5-turbo-vl-32k": { alias: "文心4.5" },
+      },
+    },
+  },
+}

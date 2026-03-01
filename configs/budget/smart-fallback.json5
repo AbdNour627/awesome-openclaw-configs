@@ -1,0 +1,35 @@
+// ============================================================
+// 💰 省钱方案：智能降级 + 免费模型兜底
+// ============================================================
+// 主力用便宜的国产模型，复杂任务才用贵的模型。
+// 通过 fallbacks 实现：如果主模型失败，自动切换备用。
+//
+// 策略：
+//   主力 → Kimi K2.5（免费额度）
+//   降级 → Qwen（免费 OAuth）
+//   兜底 → 本地 Ollama（零成本）
+//
+// 配合 /model 命令，需要时手动切到高端模型。
+// ============================================================
+{
+  env: {
+    MOONSHOT_API_KEY: "sk-你的密钥",
+  },
+
+  agents: {
+    defaults: {
+      model: {
+        primary: "moonshot/kimi-k2.5",
+        fallbacks: [
+          "qwen-portal/coder-model",
+          "ollama/qwen2.5-coder:32b",
+        ],
+      },
+      models: {
+        "moonshot/kimi-k2.5": { alias: "Kimi" },
+        "qwen-portal/coder-model": { alias: "Qwen" },
+        "ollama/qwen2.5-coder:32b": { alias: "本地" },
+      },
+    },
+  },
+}

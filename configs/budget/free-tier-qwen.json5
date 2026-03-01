@@ -1,0 +1,22 @@
+// ============================================================
+// 💰 零成本方案：Qwen 免费 OAuth
+// ============================================================
+// 完全免费，每天 2,000 次请求，适合个人轻度使用。
+// 无需信用卡，无需 API Key。
+//
+// 启用步骤：
+//   openclaw plugins enable qwen-portal-auth
+//   openclaw gateway restart
+//   openclaw models auth login --provider qwen-portal --set-default
+// ============================================================
+{
+  agents: {
+    defaults: {
+      model: { primary: "qwen-portal/coder-model" },
+      models: {
+        "qwen-portal/coder-model": { alias: "Qwen编程" },
+        "qwen-portal/vision-model": { alias: "Qwen视觉" },
+      },
+    },
+  },
+}

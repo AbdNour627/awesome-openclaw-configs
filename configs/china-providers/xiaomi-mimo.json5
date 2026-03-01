@@ -1,0 +1,53 @@
+// ============================================================
+// 小米 MiMo 模型配置
+// ============================================================
+// 小米 MiMo 是小米的 AI 模型平台，提供 MiMo V2 系列模型。
+// 兼容 Anthropic Messages API。
+//
+// 前置条件：
+//   1. 注册小米 MiMo 平台：https://platform.xiaomimimo.com
+//   2. 在控制台创建 API Key
+//   3. 快速配置：openclaw onboard --auth-choice xiaomi-api-key
+//
+// 特性：
+//   - mimo-v2-flash：262144 token 上下文窗口
+//   - 使用 Anthropic Messages API
+//   - 成本为 0（目前免费）
+// ============================================================
+{
+  env: {
+    XIAOMI_API_KEY: "你的密钥",
+  },
+
+  agents: {
+    defaults: {
+      model: { primary: "xiaomi/mimo-v2-flash" },
+      models: {
+        "xiaomi/mimo-v2-flash": { alias: "MiMo" },
+      },
+    },
+  },
+
+  // 可选：显式定义 provider（通常自动注入）
+  models: {
+    mode: "merge",
+    providers: {
+      xiaomi: {
+        baseUrl: "https://api.xiaomimimo.com/anthropic",
+        api: "anthropic-messages",
+        apiKey: "XIAOMI_API_KEY",
+        models: [
+          {
+            id: "mimo-v2-flash",
+            name: "Xiaomi MiMo V2 Flash",
+            reasoning: false,
+            input: ["text"],
+            cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
+            contextWindow: 262144,
+            maxTokens: 8192,
+          },
+        ],
+      },
+    },
+  },
+}

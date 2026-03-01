@@ -1,0 +1,64 @@
+// ============================================================
+// 📱 飞书（Feishu / Lark）企业机器人配置
+// ============================================================
+// 将 OpenClaw 接入飞书，实现企业内部 AI 助手。
+// 支持私聊 + 群聊，WebSocket 长连接（无需公网 IP）。
+//
+// 前置条件：
+//   1. 安装飞书插件：openclaw plugins install @openclaw/feishu
+//   2. 在飞书开放平台创建企业应用：https://open.feishu.cn/app
+//   3. 获取 App ID（cli_xxx）和 App Secret
+//   4. 配置权限（见下方说明）
+//   5. 启用机器人能力
+//   6. 事件订阅：添加 im.message.receive_v1，选择长连接
+//   7. 发布应用并等待审批
+//
+// 飞书应用权限（在"权限管理"中批量导入）：
+//   im:message:send_as_bot / im:message:readonly /
+//   im:message.p2p_msg:readonly / im:resource 等
+//
+// 国际版（Lark）用户：
+//   使用 https://open.larksuite.com/app
+//   设置 domain: "lark"
+// ============================================================
+{
+  agents: {
+    defaults: {
+      workspace: "~/.openclaw/workspace",
+      model: { primary: "moonshot/kimi-k2.5" },
+    },
+  },
+
+  channels: {
+    feishu: {
+      enabled: true,
+      // 飞书 or lark（国际版）
+      // domain: "lark",
+
+      // DM 策略：配对模式
+      dmPolicy: "pairing",
+
+      // 群聊策略
+      groupPolicy: "open",
+
+      // 流式输出（飞书互动卡片）
+      streaming: true,
+      blockStreaming: true,
+
+      accounts: {
+        main: {
+          appId: "cli_你的AppID",
+          appSecret: "你的AppSecret",
+          botName: "AI 小助手",
+        },
+      },
+
+      // 特定群聊配置（可选）
+      // groups: {
+      //   "oc_群聊ID": {
+      //     requireMention: false, // 不需要 @提及
+      //   },
+      // },
+    },
+  },
+}

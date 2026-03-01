@@ -1,0 +1,57 @@
+// ============================================================
+// 👨‍💻 开发者配置：GitHub CI 监控 + Code Review Agent
+// ============================================================
+// 让 AI 助手监控 GitHub 仓库的 Issue、PR 和 CI 状态，
+// 自动 review 代码变更并通知你。
+//
+// 所需技能（Skills）：
+//   clawhub install github       # GitHub CLI 集成
+//   clawhub install gh-issues    # Issue 自动处理 + PR 创建
+//   clawhub install coding-agent # 编程 agent（Codex/Claude Code）
+//
+// 用法示例：
+//   "检查 my-org/my-repo 的最新 PR"
+//   "review 一下 PR #42 的代码"
+//   "/gh-issues my-org/my-repo --label bug --limit 5"
+// ============================================================
+{
+  identity: {
+    name: "Code 助手",
+    theme: "专业的开发辅助助手",
+    emoji: "👨‍💻",
+  },
+
+  agents: {
+    defaults: {
+      workspace: "~/.openclaw/workspace",
+      // 编程推荐使用思考模型
+      model: {
+        primary: "moonshot/kimi-k2-thinking",
+        fallbacks: ["minimax/MiniMax-M2.1"],
+      },
+      models: {
+        "moonshot/kimi-k2-thinking": { alias: "K2思考" },
+        "minimax/MiniMax-M2.1": { alias: "M2.1" },
+      },
+    },
+  },
+
+  // 工具配置
+  tools: {
+    media: {
+      // 启用代码截图分析
+      video: {
+        enabled: true,
+        maxBytes: 52428800,
+      },
+    },
+  },
+
+  channels: {
+    telegram: {
+      enabled: true,
+      botToken: "你的Telegram_Bot_Token",
+      dmPolicy: "pairing",
+    },
+  },
+}

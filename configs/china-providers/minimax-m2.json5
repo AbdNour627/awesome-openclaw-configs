@@ -1,0 +1,61 @@
+// ============================================================
+// MiniMax M2.1 模型配置
+// ============================================================
+// MiniMax 提供 M2.1 模型，支持 Anthropic 兼容 API。
+// M2.1 擅长多语言编程、Web/App 开发、工具调用。
+//
+// 前置条件（两种方式任选）：
+//
+// 方式一：OAuth（推荐，无需 API Key）
+//   openclaw plugins enable minimax-portal-auth
+//   openclaw gateway restart
+//   openclaw onboard --auth-choice minimax-portal
+//   ↳ 选择端点：Global（api.minimax.io）或 CN（api.minimaxi.com）
+//
+// 方式二：API Key
+//   1. 注册 MiniMax 平台
+//   2. 获取 API Key（格式：sk-...）
+//   3. openclaw onboard --auth-choice minimax-api-key
+//
+// 注意：
+//   - 国际端点：https://api.minimax.io/anthropic
+//   - 中国端点：https://api.minimaxi.com/anthropic
+//   - 模型 ID 大小写敏感：MiniMax-M2.1（不是 minimax-m2.1）
+// ============================================================
+{
+  env: {
+    MINIMAX_API_KEY: "sk-你的密钥",
+  },
+
+  agents: {
+    defaults: {
+      model: { primary: "minimax/MiniMax-M2.1" },
+      models: {
+        "minimax/MiniMax-M2.1": { alias: "M2.1" },
+      },
+    },
+  },
+
+  models: {
+    mode: "merge",
+    providers: {
+      minimax: {
+        // 国内用户使用 .com 端点
+        baseUrl: "https://api.minimaxi.com/anthropic",
+        apiKey: "${MINIMAX_API_KEY}",
+        api: "anthropic-messages",
+        models: [
+          {
+            id: "MiniMax-M2.1",
+            name: "MiniMax M2.1",
+            reasoning: false,
+            input: ["text"],
+            cost: { input: 15, output: 60, cacheRead: 2, cacheWrite: 10 },
+            contextWindow: 200000,
+            maxTokens: 8192,
+          },
+        ],
+      },
+    },
+  },
+}
