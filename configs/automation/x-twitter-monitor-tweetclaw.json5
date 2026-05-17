@@ -1,0 +1,60 @@
+// ============================================================
+// ⚡ X/Twitter 公开信号监控 + 人工审核发布
+// ============================================================
+// 使用 TweetClaw OpenClaw 插件搜索推文、搜索回复、导出关注者并监控关键词。
+// 适合产品反馈、发布后舆情、活动抽奖和账号受众研究。
+// 前提条件：先安装 @xquik/tweetclaw，并在本地 OpenClaw 配置中保存 Xquik 凭证。
+//
+// 安装与本地配置：
+//   openclaw plugins install @xquik/tweetclaw
+//   openclaw config set plugins.entries.tweetclaw.config.baseUrl "https://xquik.com"
+//   openclaw config set tools.alsoAllow '["explore", "tweetclaw"]'
+//
+// 参考：
+//   https://github.com/Xquik-dev/tweetclaw
+//   https://www.npmjs.com/package/@xquik/tweetclaw
+//   https://clawhub.ai/plugins/@xquik/tweetclaw
+//
+// 推荐提示词：
+//   "用 TweetClaw 搜索最近 24 小时提到我产品的推文和回复，按抱怨、问题、好评分组。"
+//   "导出最近关注者做受众研究，不要主动联系任何人。"
+//   "准备 3 条回复草稿，但不要发布。先展示目标推文、最终文本和风险。"
+// ============================================================
+{
+  agents: {
+    defaults: {
+      workspace: "~/.openclaw/workspace",
+      model: { primary: "moonshot/kimi-k2.5" },
+
+      heartbeat: {
+        every: "1h",
+        target: "last",
+        activeHours: {
+          start: "09:00",
+          end: "22:00",
+        },
+        prompt: "用 TweetClaw 检查 X/Twitter 关键词和监控事件。只总结公开信号；发布、回复、私信、关注、转发、点赞、上传媒体或抽奖前必须先等待人工批准。",
+        ackMaxChars: 500,
+      },
+    },
+  },
+
+  tools: {
+    // 保留默认工具集，只额外允许 TweetClaw 的目录和执行工具。
+    alsoAllow: ["explore", "tweetclaw"],
+  },
+
+  plugins: {
+    entries: {
+      tweetclaw: {
+        enabled: true,
+        config: {
+          // Xquik 凭证不要写进这个文件。使用 OpenClaw 本地配置保存。
+          baseUrl: "https://xquik.com",
+          pollingEnabled: true,
+          pollingInterval: 60,
+        },
+      },
+    },
+  },
+}

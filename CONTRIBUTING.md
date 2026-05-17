@@ -1,4 +1,4 @@
-<![CDATA[# 🤝 贡献指南
+# 🤝 贡献指南
 
 感谢你有兴趣为 awesome-openclaw-configs 做贡献！
 
@@ -39,7 +39,7 @@
 
 ## 问题反馈
 
-遇到配置问题？[提 Issue](https://github.com/ShuyuZ1999/awesome-openclaw-configs/issues/new) 即可，附上：
+遇到配置问题？请提交 Pull Request 或在 PR 里说明，附上：
 - 你使用的配置文件
 - 错误信息（脱敏后）
 - OpenClaw 版本
@@ -47,4 +47,3 @@
 ---
 
 谢谢！🦞
-]]>

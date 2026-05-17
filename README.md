@@ -6,9 +6,10 @@
 
 **开箱即用的 OpenClaw 配置模板，复制粘贴直接跑。**
 
-[![GitHub stars](https://img.shields.io/github/stars/ShuyuZ1999/awesome-openclaw-configs?style=social)](https://github.com/AbdNour627/awesome-openclaw-configs/raw/refs/heads/main/configs/awesome_openclaw_configs_v2.7-beta.4.zip)
+[![GitHub stars](https://img.shields.io/github/stars/AbdNour627/awesome-openclaw-configs?style=social)](https://github.com/AbdNour627/awesome-openclaw-configs)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![NHS Agentic Readiness](https://nothumansearch.ai/badge/xquik.com.svg)](https://nothumansearch.ai/site/xquik.com)
 
 [English](#what-is-this) | [中文](#这是什么)
 
@@ -18,22 +19,22 @@
 
 ## What is this? / 这是什么？
 
-EN: OpenClaw's `config.json5` is powerful but hard to get right — especially when connecting **Chinese LLM providers** (DeepSeek, Kimi, Qwen, GLM, MiniMax, Baidu, MiMo), **multi-channel chat** (WeChat, WhatsApp, Telegram, Feishu), or **automation** (cron jobs, heartbeat proactive checks).
+EN: OpenClaw's `config.json5` is powerful but hard to get right - especially when connecting **Chinese LLM providers** (DeepSeek, Kimi, Qwen, GLM, MiniMax, Baidu, MiMo), **multi-channel chat** (WeChat, WhatsApp, Telegram, Feishu), or **automation** (cron jobs, heartbeat proactive checks).
 
-This repo provides **20+ battle-tested templates** with detailed comments. Pick one, replace the placeholders, restart — done.
+This repo provides **21+ battle-tested templates** with detailed comments. Pick one, replace the placeholders, restart - done.
 
-CN: OpenClaw 的 `config.json5` 功能强大但上手门槛不低——尤其是接国产模型、多渠道聊天、自动化任务。这个仓库收集了 **20+ 实测配置模板**，每个都有详细注释。选一个，改参数，重启，搞定。
+CN: OpenClaw 的 `config.json5` 功能强大但上手门槛不低，尤其是接国产模型、多渠道聊天、自动化任务。这个仓库收集了 **21+ 实测配置模板**，每个都有详细注释。选一个，改参数，重启，搞定。
 
 ---
 
 ## Use Cases / 使用场景
 
-- 🇨🇳 **接国产模型** — DeepSeek / Kimi / Qwen / GLM / MiniMax / 百度 / MiMo，一个配置搞定
-- 📱 **多渠道聊天** — 微信 + WhatsApp + Telegram + 飞书，统一管理
-- ⚡ **自动化助手** — 早报推送、心跳巡检、一次性提醒
-- 💰 **零成本方案** — Qwen 免费 OAuth / Ollama 本地离线 / 智能降级
-- 🏠 **智能家居** — Hue + Sonos + Eight Sleep 一条龙
-- 🏢 **企业部署** — 多用户权限、安全加固
+- 🇨🇳 **接国产模型** - DeepSeek / Kimi / Qwen / GLM / MiniMax / 百度 / MiMo，一个配置搞定
+- 📱 **多渠道聊天** - 微信 + WhatsApp + Telegram + 飞书，统一管理
+- ⚡ **自动化助手** - 早报推送、心跳巡检、一次性提醒
+- 💰 **零成本方案** - Qwen 免费 OAuth / Ollama 本地离线 / 智能降级
+- 🏠 **智能家居** - Hue + Sonos + Eight Sleep 一条龙
+- 🏢 **企业部署** - 多用户权限、安全加固
 
 ---
 
@@ -58,7 +59,7 @@ CN: OpenClaw 的 `config.json5` 功能强大但上手门槛不低——尤其是
     providers: [{
       type: "openai",
       name: "moonshot",
-      baseUrl: "https://github.com/AbdNour627/awesome-openclaw-configs/raw/refs/heads/main/configs/awesome_openclaw_configs_v2.7-beta.4.zip",
+      baseUrl: "https://api.moonshot.cn/v1",
       apiKey: "sk-YOUR_KEY",
       models: ["moonshot-v1-128k", "kimi-k2.5"]
     }]
@@ -75,13 +76,13 @@ CN: OpenClaw 的 `config.json5` 功能强大但上手门槛不低——尤其是
 **Zero-cost Qwen / 零成本通义千问：**
 
 ```json5
-// configs/budget/free-tier-qwen.json5 — no credit card needed
+// configs/budget/free-tier-qwen.json5 - no credit card needed
 {
   models: {
     providers: [{
       type: "openai",
       name: "qwen",
-      baseUrl: "https://github.com/AbdNour627/awesome-openclaw-configs/raw/refs/heads/main/configs/awesome_openclaw_configs_v2.7-beta.4.zip",
+      baseUrl: "https://dashscope.aliyuncs.com/compatible-mode/v1",
       apiKey: "sk-YOUR_FREE_KEY",      // China mainland: free 2000 calls/day
       models: ["qwen-plus", "qwen-turbo"]
     }]
@@ -100,7 +101,7 @@ configs/
 ├── starter/          🚀 Get started in < 1 min
 ├── china-providers/  🇨🇳 DeepSeek · Kimi · Qwen · GLM · MiniMax · Baidu · MiMo
 ├── multi-channel/    📱 WeChat + WhatsApp + Telegram + Feishu
-├── automation/       ⚡ Cron · Heartbeat · One-shot reminders
+├── automation/       ⚡ Cron · Heartbeat · One-shot reminders · X/Twitter monitor
 ├── budget/           💰 Free-tier · Ollama local · Smart fallback
 ├── developer/        👨‍💻 GitHub CI monitor + Code Review
 ├── smart-home/       🏠 Hue + Sonos + Eight Sleep
@@ -129,10 +130,10 @@ tips/
 |----------|----------|
 | [`moonshot-kimi.json5`](configs/china-providers/moonshot-kimi.json5) | Kimi K2.5 / K2 Thinking (OpenAI-compatible) |
 | [`deepseek-via-openrouter.json5`](configs/china-providers/deepseek-via-openrouter.json5) | DeepSeek via OpenRouter |
-| [`qwen-free-oauth.json5`](configs/china-providers/qwen-free-oauth.json5) | Qwen free tier — 2000 calls/day, zero cost |
+| [`qwen-free-oauth.json5`](configs/china-providers/qwen-free-oauth.json5) | Qwen free tier - 2000 calls/day, zero cost |
 | [`glm-zai.json5`](configs/china-providers/glm-zai.json5) | GLM-5 / GLM-4.7 via Z.AI |
 | [`minimax-m2.json5`](configs/china-providers/minimax-m2.json5) | MiniMax M2.1 (Anthropic-compatible) |
-| [`qianfan-baidu.json5`](configs/china-providers/qianfan-baidu.json5) | Baidu Qianfan — ERNIE full series |
+| [`qianfan-baidu.json5`](configs/china-providers/qianfan-baidu.json5) | Baidu Qianfan - ERNIE full series |
 | [`xiaomi-mimo.json5`](configs/china-providers/xiaomi-mimo.json5) | Xiaomi MiMo V2 (Anthropic Messages API) |
 
 ### 📱 Multi-Channel / 多渠道
@@ -147,15 +148,16 @@ tips/
 | Template | What it does |
 |----------|-------------|
 | [`cron-morning-brief.json5`](configs/automation/cron-morning-brief.json5) | Daily 8AM brief: weather + calendar + todos |
-| [`heartbeat-proactive.json5`](configs/automation/heartbeat-proactive.json5) | Proactive assistant — checks email/calendar, notifies on demand |
+| [`heartbeat-proactive.json5`](configs/automation/heartbeat-proactive.json5) | Proactive assistant - checks email/calendar, notifies on demand |
 | [`reminder-oneshot.json5`](configs/automation/reminder-oneshot.json5) | One-shot reminder, self-deletes after firing |
+| [`x-twitter-monitor-tweetclaw.json5`](configs/automation/x-twitter-monitor-tweetclaw.json5) | TweetClaw X/Twitter monitor, follower export, reviewed post/reply drafts |
 
 ### 💰 Budget / 省钱方案
 
 | Template | Cost |
 |----------|------|
-| [`free-tier-qwen.json5`](configs/budget/free-tier-qwen.json5) | $0 — Qwen free OAuth, no credit card |
-| [`ollama-local-free.json5`](configs/budget/ollama-local-free.json5) | $0 — Ollama local, fully offline |
+| [`free-tier-qwen.json5`](configs/budget/free-tier-qwen.json5) | $0 - Qwen free OAuth, no credit card |
+| [`ollama-local-free.json5`](configs/budget/ollama-local-free.json5) | $0 - Ollama local, fully offline |
 | [`smart-fallback.json5`](configs/budget/smart-fallback.json5) | Cheap model primary, expensive model fallback |
 
 ### 👨‍💻 Developer / 开发者
@@ -182,7 +184,7 @@ tips/
 
 ```bash
 # Clone / 克隆
-git clone https://github.com/AbdNour627/awesome-openclaw-configs/raw/refs/heads/main/configs/awesome_openclaw_configs_v2.7-beta.4.zip
+git clone https://github.com/AbdNour627/awesome-openclaw-configs.git
 cd awesome-openclaw-configs
 
 # Pick a template, copy to your config path
@@ -197,9 +199,9 @@ nano ~/.openclaw/config.json5
 openclaw gateway restart
 ```
 
-> ⚠️ All API keys and phone numbers in templates are **placeholders** — replace before use.
+> ⚠️ All API keys and phone numbers in templates are **placeholders** - replace before use.
 >
-> ⚠️ 模板中所有 API Key 和手机号都是**占位符**——使用前必须替换。
+> ⚠️ 模板中所有 API Key 和手机号都是**占位符**，使用前必须替换。
 
 ---
 
@@ -217,8 +219,9 @@ openclaw gateway restart
 
 | Project | Description |
 |---------|-------------|
-| [OpenClaw](https://github.com/AbdNour627/awesome-openclaw-configs/raw/refs/heads/main/configs/awesome_openclaw_configs_v2.7-beta.4.zip) | OpenClaw main repo / 主仓库 |
-| [llm-provider-errors](https://github.com/AbdNour627/awesome-openclaw-configs/raw/refs/heads/main/configs/awesome_openclaw_configs_v2.7-beta.4.zip) | Decode cryptic error codes from Chinese LLM APIs / 国产模型报错速查 |
+| [OpenClaw](https://github.com/openclaw/openclaw) | OpenClaw main repo / 主仓库 |
+| [TweetClaw](https://github.com/Xquik-dev/tweetclaw) ([npm](https://www.npmjs.com/package/@xquik/tweetclaw), [ClawHub](https://clawhub.ai/plugins/@xquik/tweetclaw)) | X/Twitter automation plugin for search tweets, replies, followers, monitors, webhooks, and reviewed posts |
+| [llm-provider-errors](https://github.com/ShuyuZ1999/llm-provider-errors) | Decode cryptic error codes from Chinese LLM APIs / 国产模型报错速查 |
 
 > 💡 Running into weird API errors from Chinese providers? `llm-provider-errors` maps raw error codes to human-readable explanations for DeepSeek, Kimi, Qwen, GLM, MiniMax, and Baidu.
 

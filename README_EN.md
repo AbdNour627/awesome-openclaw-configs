@@ -1,12 +1,13 @@
-<![CDATA[<div align="center">
+<div align="center">
 
 # 🦞 Awesome OpenClaw Configs
 
 **Curated, ready-to-use config templates for OpenClaw / Clawdbot**
 
-[![GitHub stars](https://img.shields.io/github/stars/ShuyuZ1999/awesome-openclaw-configs?style=social)](https://github.com/ShuyuZ1999/awesome-openclaw-configs)
+[![GitHub stars](https://img.shields.io/github/stars/AbdNour627/awesome-openclaw-configs?style=social)](https://github.com/AbdNour627/awesome-openclaw-configs)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![NHS Agentic Readiness](https://nothumansearch.ai/badge/xquik.com.svg)](https://nothumansearch.ai/site/xquik.com)
 
 [中文](README.md) | English
 
@@ -16,9 +17,9 @@
 
 ## What is this?
 
-OpenClaw's `config.json5` is powerful but can be tricky to set up from scratch — especially when integrating Chinese LLM providers (DeepSeek, Kimi, Qwen, GLM, MiniMax, Baidu Qianfan, Xiaomi MiMo), connecting multiple chat channels (WeChat, WhatsApp, Telegram, Feishu/Lark), or configuring automation.
+OpenClaw's `config.json5` is powerful but can be tricky to set up from scratch - especially when integrating Chinese LLM providers (DeepSeek, Kimi, Qwen, GLM, MiniMax, Baidu Qianfan, Xiaomi MiMo), connecting multiple chat channels (WeChat, WhatsApp, Telegram, Feishu/Lark), or configuring automation.
 
-This repo provides **20+ battle-tested config templates** with detailed comments. Copy, paste, customize, done.
+This repo provides **21+ battle-tested config templates** with detailed comments. Copy, paste, customize, done.
 
 ---
 
@@ -29,7 +30,7 @@ This repo provides **20+ battle-tested config templates** with detailed comments
 | **Starter** | `minimal`, `recommended` | Get up and running in minutes |
 | **China Providers** | `moonshot-kimi`, `deepseek-via-openrouter`, `qwen-free-oauth`, `glm-zai`, `minimax-m2`, `qianfan-baidu`, `xiaomi-mimo` | Configs for popular Chinese LLM providers |
 | **Multi-Channel** | `wechat-whatsapp-telegram`, `feishu-enterprise` | Connect multiple chat platforms at once |
-| **Automation** | `cron-morning-brief`, `heartbeat-proactive`, `reminder-oneshot` | Scheduled tasks and proactive assistant |
+| **Automation** | `cron-morning-brief`, `heartbeat-proactive`, `reminder-oneshot`, `x-twitter-monitor-tweetclaw` | Scheduled tasks, proactive assistant, and X/Twitter monitoring |
 | **Budget** | `free-tier-qwen`, `ollama-local-free`, `smart-fallback` | Zero-cost and cost-optimized setups |
 | **Developer** | `github-code-review` | GitHub CI monitoring + auto code review |
 | **Smart Home** | `hue-sonos-eight` | Hue + Sonos + Eight Sleep control |
@@ -42,7 +43,7 @@ See the [Chinese README](README.md) for full descriptions and directory structur
 ## Quick Start
 
 ```bash
-git clone https://github.com/ShuyuZ1999/awesome-openclaw-configs.git
+git clone https://github.com/AbdNour627/awesome-openclaw-configs.git
 cd awesome-openclaw-configs
 
 # Pick a config and copy it
@@ -61,16 +62,17 @@ openclaw gateway restart
 
 ## Tips
 
-- [Common Pitfalls](tips/common-pitfalls.md) — Avoid the most frequent mistakes
-- [Performance](tips/performance.md) — Token optimization, model switching
-- [Security](tips/security.md) — Key management, production hardening
+- [Common Pitfalls](tips/common-pitfalls.md) - Avoid the most frequent mistakes
+- [Performance](tips/performance.md) - Token optimization, model switching
+- [Security](tips/security.md) - Key management, production hardening
 
 ---
 
 ## Related Projects
 
-- [OpenClaw](https://github.com/nichochar/open-claw) — The main OpenClaw repository
-- [llm-provider-errors](https://github.com/ShuyuZ1999/llm-provider-errors) — Error code reference for Chinese LLM providers
+- [OpenClaw](https://github.com/openclaw/openclaw) - The main OpenClaw repository
+- [TweetClaw](https://github.com/Xquik-dev/tweetclaw) ([npm](https://www.npmjs.com/package/@xquik/tweetclaw), [ClawHub](https://clawhub.ai/plugins/@xquik/tweetclaw)) - X/Twitter automation plugin for tweet search, reply search, followers, monitors, webhooks, and reviewed posts
+- [llm-provider-errors](https://github.com/ShuyuZ1999/llm-provider-errors) - Error code reference for Chinese LLM providers
 
 ---
 
@@ -81,4 +83,3 @@ PRs welcome! See [CONTRIBUTING.md](CONTRIBUTING.md).
 ## License
 
 [MIT](LICENSE) © Shuyu Zhang
-]]>
