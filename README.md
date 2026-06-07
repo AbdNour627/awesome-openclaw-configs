@@ -11,7 +11,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![NHS Agentic Readiness](https://nothumansearch.ai/badge/xquik.com.svg)](https://nothumansearch.ai/site/xquik.com)
 
-[English](#what-is-this) | [中文](#这是什么)
+[English](README_EN.md) | 中文
 
 </div>
 
@@ -56,17 +56,18 @@ CN: OpenClaw 的 `config.json5` 功能强大但上手门槛不低，尤其是接
 // configs/china-providers/moonshot-kimi.json5
 {
   models: {
-    providers: [{
-      type: "openai",
-      name: "moonshot",
-      baseUrl: "https://api.moonshot.cn/v1",
-      apiKey: "sk-YOUR_KEY",
-      models: ["moonshot-v1-128k", "kimi-k2.5"]
-    }]
+    providers: {
+      moonshot: {
+        baseUrl: "https://api.moonshot.cn/v1",
+        apiKey: "${MOONSHOT_API_KEY}",
+        api: "openai-completions",
+        models: [{ id: "kimi-k2.5", name: "Kimi K2.5" }]
+      }
+    }
   },
   agents: {
     defaults: {
-      model: "moonshot/kimi-k2.5",
+      model: { primary: "moonshot/kimi-k2.5" },
       workspace: "~/.openclaw/workspace"
     }
   }
@@ -78,14 +79,14 @@ CN: OpenClaw 的 `config.json5` 功能强大但上手门槛不低，尤其是接
 ```json5
 // configs/budget/free-tier-qwen.json5 - no credit card needed
 {
-  models: {
-    providers: [{
-      type: "openai",
-      name: "qwen",
-      baseUrl: "https://dashscope.aliyuncs.com/compatible-mode/v1",
-      apiKey: "sk-YOUR_FREE_KEY",      // China mainland: free 2000 calls/day
-      models: ["qwen-plus", "qwen-turbo"]
-    }]
+  agents: {
+    defaults: {
+      model: { primary: "qwen-portal/coder-model" },
+      models: {
+        "qwen-portal/coder-model": { alias: "Qwen编程" },
+        "qwen-portal/vision-model": { alias: "Qwen视觉" }
+      }
+    }
   }
 }
 ```
