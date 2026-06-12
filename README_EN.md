@@ -71,7 +71,7 @@ openclaw gateway restart
 ## Related Projects
 
 - [OpenClaw](https://github.com/openclaw/openclaw) - The main OpenClaw repository
-- [TweetClaw](https://github.com/Xquik-dev/tweetclaw) ([npm](https://www.npmjs.com/package/@xquik/tweetclaw), [ClawHub](https://clawhub.ai/plugins/@xquik/tweetclaw)) - X/Twitter automation plugin for tweet search, reply search, followers, monitors, webhooks, and reviewed posts
+- [TweetClaw](https://github.com/Xquik-dev/tweetclaw) ([npm metadata](https://registry.npmjs.org/@xquik%2ftweetclaw), [ClawHub](https://clawhub.ai/plugins/@xquik/tweetclaw)) - X/Twitter automation plugin for tweet search, reply search, followers, monitors, webhooks, and reviewed posts
 - [llm-provider-errors](https://github.com/ShuyuZ1999/llm-provider-errors) - Error code reference for Chinese LLM providers
 
 ---

@@ -221,7 +221,7 @@ openclaw gateway restart
 | Project | Description |
 |---------|-------------|
 | [OpenClaw](https://github.com/openclaw/openclaw) | OpenClaw main repo / 主仓库 |
-| [TweetClaw](https://github.com/Xquik-dev/tweetclaw) ([npm](https://www.npmjs.com/package/@xquik/tweetclaw), [ClawHub](https://clawhub.ai/plugins/@xquik/tweetclaw)) | X/Twitter automation plugin for search tweets, replies, followers, monitors, webhooks, and reviewed posts |
+| [TweetClaw](https://github.com/Xquik-dev/tweetclaw) ([npm metadata](https://registry.npmjs.org/@xquik%2ftweetclaw), [ClawHub](https://clawhub.ai/plugins/@xquik/tweetclaw)) | X/Twitter automation plugin for search tweets, replies, followers, monitors, webhooks, and reviewed posts |
 | [llm-provider-errors](https://github.com/ShuyuZ1999/llm-provider-errors) | Decode cryptic error codes from Chinese LLM APIs / 国产模型报错速查 |
 
 > 💡 Running into weird API errors from Chinese providers? `llm-provider-errors` maps raw error codes to human-readable explanations for DeepSeek, Kimi, Qwen, GLM, MiniMax, and Baidu.
